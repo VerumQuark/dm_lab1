@@ -22,28 +22,28 @@ secondInput.onchange = handleSndChange;
 
 function intersectionFunc () {
 
-  const intersectionSet = firstSet.filter( element => secondSet.includes( element ) );
+  const intersectionSet = firstSet.filter( element => secondSet.includes( element ) ).sort();
 
   alert( intersectionSet );
 }
 
 function unionFunc () {
 
-  const unionSet = [ ...new Set( [...firstSet, ...secondSet ] ) ];
+  const unionSet = [ ...new Set( [...firstSet, ...secondSet ] ) ].sort();
 
   alert( unionSet );
 }
 
 function differenceFunc () {
 
-  const differenceSet = firstSet.filter( element => !secondSet.includes( element ) );
+  const differenceSet = firstSet.filter( element => !secondSet.includes( element ) ).sort();
 
   alert( differenceSet );
 }
 
 function symmetricDifferenceFunc () {
 
-  const tmpUnionSet = [ ...new Set( [...firstSet, ...secondSet ] ) ];
+  const tmpUnionSet = [ ...new Set( [...firstSet, ...secondSet ] ) ].sort();
   const tmpIntersectionSet = firstSet.filter( element => secondSet.includes( element ) );
   const symmetricDifferenceSet = tmpUnionSet.filter( element => !tmpIntersectionSet.includes( element ) )  ;
 
